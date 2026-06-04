@@ -9,7 +9,7 @@ from ml.model import train_model, compute_model_metrics, inference
 # TODO: implement the first test. Change the function name and input as needed
 
 @pytest.fixture
-def sample_data_test():
+def test_sample_data():
     """
     # Sample Data for the tests
     """
@@ -31,7 +31,7 @@ def sample_data_test():
     })
 
 
-def test_train_model_returns_random_forest(sample_data_test):
+def test_train_model_returns_random_forest(test_sample_data):
     """
     # This test verifies that train_model returns a fitted RandomForestClassifier
     """
@@ -47,7 +47,7 @@ def test_train_model_returns_random_forest(sample_data_test):
     ]
 
     X, y, _, _ = process_data(
-        sample_data_test,
+        test_sample_data,
         categorial_ceatures=cat_features,
         label="salary",
         training=True
@@ -62,7 +62,7 @@ def test_train_model_returns_random_forest(sample_data_test):
     assert len(model.estimators_) > 0
 
 # TODO: implement the second test. Change the function name and input as needed
-def test_process_data_returns_expected_shape(sample_Data_test):
+def test_process_data_returns_expected_shape(test_sample_data):
     """
     # This test verifies that process_data returns correctly shaped feature and target arrays
     """
@@ -78,16 +78,16 @@ def test_process_data_returns_expected_shape(sample_Data_test):
     ]
 
     X, y, encoder, lb = process_data(
-        sample_data_test,
+        test_sample_data,
         categorical_features=cat_features,
         label="salary",
         training=True
     )
     assert isinstance(X, np.ndarray)
 
-    assert X.shape[0] == sample_data_test.shape[0]
+    assert X.shape[0] == test_sample_data.shape[0]
 
-    assert len(y) == sample_data_test.shape[0]
+    assert len(y) == test_sample_data.shape[0]
 
     assert set(np.unique(y)).issubset({0, 1})
 
@@ -95,7 +95,7 @@ def test_process_data_returns_expected_shape(sample_Data_test):
     assert lb is not None
 
 # TODO: implement the third test. Change the function name and input as needed
-def test_all_artifacts_returned(sample_data_test):
+def test_all_artifacts_returned(test_sample_data):
     """
     # This test verifies that process_data returns all the required artifacts with the correct types
     """
@@ -111,7 +111,7 @@ def test_all_artifacts_returned(sample_data_test):
     ]
 
     X, y, encoder, lb = process_data(
-        sample_data_test,
+        test_sample_data,
         categorical_features=cat_features,
         label="salary",
         training=True
