@@ -31,7 +31,7 @@ def sample_data_test():
     })
 
 
-def train_model_returns_random_forest_test(sample_data_test):
+def test_train_model_returns_random_forest(sample_data_test):
     """
     # This test verifies that train_model returns a fitted RandomForestClassifier
     """
@@ -62,7 +62,7 @@ def train_model_returns_random_forest_test(sample_data_test):
     assert len(model.estimators_) > 0
 
 # TODO: implement the second test. Change the function name and input as needed
-def process_data_returns_expected_shape_test(sample_Data_test):
+def test_process_data_returns_expected_shape(sample_Data_test):
     """
     # This test verifies that process_data returns correctly shaped feature and target arrays
     """
@@ -95,7 +95,7 @@ def process_data_returns_expected_shape_test(sample_Data_test):
     assert lb is not None
 
 # TODO: implement the third test. Change the function name and input as needed
-def all_artifacts_returned_test(sample_data_test):
+def test_all_artifacts_returned(sample_data_test):
     """
     # This test verifies that process_data returns all the required artifacts with the correct types
     """
