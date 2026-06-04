@@ -42,13 +42,12 @@ def test_train_model_returns_random_forest(test_sample_data):
         "occupation",
         "relationship",
         "race",
-        "sex",
         "native-country"
     ]
 
     X, y, _, _ = process_data(
         test_sample_data,
-        categorial_ceatures=cat_features,
+        categorial_features=cat_features,
         label="salary",
         training=True
     )
@@ -73,7 +72,6 @@ def test_process_data_returns_expected_shape(test_sample_data):
         "occupation",
         "relationship",
         "race",
-        "sex",
         "native-country"
     ]
 
@@ -106,7 +104,6 @@ def test_all_artifacts_returned(test_sample_data):
         "occupation",
         "relationship",
         "race",
-        "sex",
         "native-country"
     ]
 
