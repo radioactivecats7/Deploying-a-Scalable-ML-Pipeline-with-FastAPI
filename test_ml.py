@@ -47,7 +47,7 @@ def test_train_model_returns_random_forest(test_sample_data):
 
     X, y, _, _ = process_data(
         test_sample_data,
-        categorial_features=cat_features,
+        categorical_features=cat_features,
         label="salary",
         training=True
     )
