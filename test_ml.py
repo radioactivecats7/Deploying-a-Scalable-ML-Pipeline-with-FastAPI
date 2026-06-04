@@ -13,7 +13,7 @@ def test_sample_data():
     """
     # Sample Data for the tests
     """
-    return pd.Dataframe({
+    return pd.DataFrame({
         "age":[25, 45, 38, 29],
         "workclass": ["Private", "Self-emp-not-inc", "Private", "State-gov"],
         "fnlgt": [226802, 89814, 336951, 123011],
